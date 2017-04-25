@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 int main () {
-    int money, day;
+    int day;
+    float money;
     printf ("Specify the Deposit amount (RUR): ");
-    scanf ("%d", money);
-    while (maney<10000) {
+    scanf ("%f", &money);
+    while (money<10000.0) {
         printf ("Invalid Deposit amount! Enter again: ");
-        scanf ("%d", money);
+        scanf ("%f", &money);
     } 
     printf ("Specify the Deposit term (days): ");
-    scanf ("%d", day);
-    while (day>365) {
+    scanf ("%d", &day);
+    while (day>365 || day<0) {
         printf ("Wrong term Deposit! Enter again: ");
-        scanf ("%d", day);
+        scanf ("%d", &day);
     }
     if (money<=100000) {
         if (day<241) {
@@ -38,6 +39,6 @@ int main () {
         }
         else money+=money*day*0.15/365;
     }
-    printf ("The Deposit amount at the end of the period: %d!", money);
+    printf ("The Deposit amount at the end of the period: %.2f!\n", money);
     return 0;
 }
