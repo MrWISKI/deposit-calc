@@ -9,6 +9,7 @@ int main () {
         scanf ("%d", money);
     } 
     printf ("Specify the Deposit term (days): ");
+    scanf ("%d", day);
     while (day>365) {
         printf ("Wrong term Deposit! Enter again: ");
         scanf ("%d", day);
@@ -37,6 +38,6 @@ int main () {
         }
         else money+=money*day*0.15/365;
     }
-    scanf ("%d", day);
+    printf ("The Deposit amount at the end of the period: %d!", money);
     return 0;
 }
