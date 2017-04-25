@@ -13,6 +13,30 @@ int main () {
         printf ("Wrong term Deposit! Enter again: ");
         scanf ("%d", day);
     }
+    if (money<=100000) {
+        if (day<241) {
+            if (day<121) {
+                if (day<31) {
+                    money-=money*day*0.1/365;
+                }
+                else money+=money*day*0.02/365;
+            }
+            else money+=money*day*0.06/365;
+        }
+        else money+=money*day*0.12/365;
+    }
+    else {
+        if (day<241) {
+            if (day<121) {
+                if (day<31) {
+                    money-=money*day*0.1/365;
+                }
+                else money+=money*day*0.03/365;
+            }
+            else money+=money*day*0.08/365;
+        }
+        else money+=money*day*0.15/365;
+    }
     scanf ("%d", day);
     return 0;
 }
