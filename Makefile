@@ -14,5 +14,6 @@ bin/ :
 	mkdir bin
 build/ :
 	mkdir build
-clean:
-	rm -f build/*.o
+.PHONY : clean
+clean: 
+	rm -f build/*.o bin/*
