@@ -1,4 +1,14 @@
-all:
-	gcc src/main.c -Wall -Werror -c -o build/main.o
-	gcc src/deposit.c -Wall -Werror -c -o build/deposit.o
-	gcc build/main.o build/deposit.o -o bin/deposit-calc
+CC = gcc
+CFLAGS = -c -Wall -Werror -o
+OBJECTS= build/main.o build/deposit.o
+
+all:  prog
+
+prog: $(OBJECTS)
+	$(CC) $(OBJECTS) -o bin/deposit-calc
+build/main.o : src/main.c
+	$(CC) src/main.c $(CFLAGS) build/main.o
+build/deposit.o : src/deposit.c
+	$(CC) src/deposit.c $(CFLAGS) build/deposit.o
+clean:
+	rm -rf *.o *.exe
