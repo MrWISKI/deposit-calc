@@ -11,4 +11,4 @@ build/main.o : src/main.c
 build/deposit.o : src/deposit.c
 	$(CC) src/deposit.c $(CFLAGS) build/deposit.o
 clean:
-	rm -rf *.o *.exe
+	rm -f build/*.o
