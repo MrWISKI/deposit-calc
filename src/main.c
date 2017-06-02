@@ -3,9 +3,9 @@
 
 int main () {
     int day;
-    float money, money1;
+    double money, money1;
     printf ("Specify the Deposit amount (RUR): ");
-    scanf ("%f", &money);
+    scanf ("%lf", &money);
     checkMoney (&money);
     money1=money;
     printf ("Specify the Deposit term (days): ");
