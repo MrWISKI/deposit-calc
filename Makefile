@@ -10,6 +10,7 @@ prog: $(OBJECTS) bin/
 	$(CC) $(OBJECTS) -o bin/deposit-calc
 test: $(OBJECTS_T) bin/
 	$(CC) $(OBJECTS_T) -o bin/deposit-calc-test
+	./bin/deposit-calc-test
 build/src/main.o : build/src/ src/main.c
 	$(CC) src/main.c $(CFLAGS) build/src/main.o
 build/src/deposit.o : build/src/ src/deposit.c
